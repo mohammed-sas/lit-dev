@@ -44,4 +44,4 @@ export class FcImage extends LitElement {
   }
 }
 
-window.customElements.define("fc-icon", FcIcon);
+window.customElements.define("fc-image", FcImage);
