@@ -1,5 +1,4 @@
 import { html, LitElement } from "lit";
-import { unsafeSVG } from "lit-html/directives/unsafe-svg.js";
 export class FcImage extends LitElement {
   static get properties() {
     return {

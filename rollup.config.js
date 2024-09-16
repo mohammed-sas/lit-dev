@@ -12,7 +12,7 @@ export default [
     output: {
       file: "dist/fc-icon.js",
       format: "esm", // immediately-invoked function expression — suitable for <script> tags
-      sourcemap: true,
+      sourcemap: false,
     },
     plugins: [
       resolve(), // tells Rollup how to find date-fns in node_modules
@@ -25,7 +25,7 @@ export default [
     output: {
       file: "dist/fc-image.js",
       format: "esm", // immediately-invoked function expression — suitable for <script> tags
-      sourcemap: true,
+      sourcemap: false,
     },
     plugins: [
       resolve(), // tells Rollup how to find date-fns in node_modules
