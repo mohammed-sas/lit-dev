@@ -19,8 +19,10 @@ export default class FcIcon extends LitElement {
   constructor() {
     super();
   }
-  updated() {
-    this.loadIcon();
+  willUpdate(changedProperties) {
+    if (changedProperties.has("name") || changedProperties.has("group")) {
+      this.loadIcon();
+    }
   }
   async getSvgContent(url) {
     try {
