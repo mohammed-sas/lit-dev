@@ -1,5 +1,5 @@
 {
-  "name": "rollup-starter-app",
+  "name": "rollup-starter-lit",
   "version": "1.0.0",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
