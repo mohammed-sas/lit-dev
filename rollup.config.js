@@ -33,4 +33,17 @@ export default [
       production && terser(), // minify, but only in production
     ],
   },
+  {
+    input: "src/components/fc-illustration.js",
+    output: {
+      file: "dist/fc-illustration.js",
+      format: "esm", // immediately-invoked function expression — suitable for <script> tags
+      sourcemap: false,
+    },
+    plugins: [
+      resolve(), // tells Rollup how to find date-fns in node_modules
+      commonjs(), // converts date-fns to ES modules
+      production && terser(), // minify, but only in production
+    ],
+  },
 ];
