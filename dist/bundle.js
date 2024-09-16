@@ -47,6 +47,6 @@ class ht extends ot{}ht.directiveName="unsafeSVG",ht.resultType=2;const at=(t=>(
       src=${this._url}
       alt=${this.name}
       style="max-height:
-    ${t+"px"}; max-width: ${t+"px"}; width: 'auto'; height:
+    ${t}; max-width: ${t}; width: 'auto'; height:
     'auto'"
     />`}}window.customElements.define("fc-illustration",dt);export{lt as FcIcon,dt as FcIllustration,ct as FcImage};
