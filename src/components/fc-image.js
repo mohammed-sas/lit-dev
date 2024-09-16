@@ -29,8 +29,8 @@ export class FcImage extends LitElement {
     return html` <img
       src=${this._url}
       alt=${this.name}
-      style="maxHeight:
-    ${this.height + "px"}; maxWidth: ${this.width +
+      style="max-height:
+    ${this.height + "px"}; max-width: ${this.width +
       "px"}; width: 'auto'; height:
     'auto'"
     />`;
