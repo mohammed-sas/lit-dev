@@ -1,5 +1,5 @@
 import { html, LitElement } from "lit";
-export class FcIllustration extends LitElement {
+export default class FcIllustration extends LitElement {
   static get properties() {
     return {
       name: { attribute: true },
@@ -35,8 +35,7 @@ export class FcIllustration extends LitElement {
       src=${this._url}
       alt=${this.name}
       style="max-height:
-    ${illustrationSize + "px"}; max-width: ${illustrationSize +
-      "px"}; width: 'auto'; height:
+    ${illustrationSize}; max-width: ${illustrationSize}; width: 'auto'; height:
     'auto'"
     />`;
   }

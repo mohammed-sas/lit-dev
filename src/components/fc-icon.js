@@ -1,6 +1,6 @@
 import { html, LitElement } from "lit";
 import { unsafeSVG } from "lit-html/directives/unsafe-svg.js";
-export class FcIcon extends LitElement {
+export default class FcIcon extends LitElement {
   static get properties() {
     return {
       name: { attribute: true },

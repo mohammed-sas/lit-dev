@@ -1,5 +1,5 @@
 import { html, LitElement } from "lit";
-export class FcImage extends LitElement {
+export default class FcImage extends LitElement {
   static get properties() {
     return {
       name: { attribute: true },

@@ -6,44 +6,16 @@ import { terser } from "rollup-plugin-terser";
 // `npm run dev` -> `production` is false
 const production = !process.env.ROLLUP_WATCH;
 
-export default [
-  {
-    input: "src/components/fc-icon.js",
-    output: {
-      file: "dist/fc-icon.js",
-      format: "esm", // immediately-invoked function expression — suitable for <script> tags
-      sourcemap: false,
-    },
-    plugins: [
-      resolve(), // tells Rollup how to find date-fns in node_modules
-      commonjs(), // converts date-fns to ES modules
-      production && terser(), // minify, but only in production
-    ],
+export default {
+  input: "src/index.js", // Use the new entry point file
+  output: {
+    file: "dist/bundle.js", // Single output file for all components
+    format: "esm", // ES module format for modern JavaScript
+    sourcemap: false,
   },
-  {
-    input: "src/components/fc-image.js",
-    output: {
-      file: "dist/fc-image.js",
-      format: "esm", // immediately-invoked function expression — suitable for <script> tags
-      sourcemap: false,
-    },
-    plugins: [
-      resolve(), // tells Rollup how to find date-fns in node_modules
-      commonjs(), // converts date-fns to ES modules
-      production && terser(), // minify, but only in production
-    ],
-  },
-  {
-    input: "src/components/fc-illustration.js",
-    output: {
-      file: "dist/fc-illustration.js",
-      format: "esm", // immediately-invoked function expression — suitable for <script> tags
-      sourcemap: false,
-    },
-    plugins: [
-      resolve(), // tells Rollup how to find date-fns in node_modules
-      commonjs(), // converts date-fns to ES modules
-      production && terser(), // minify, but only in production
-    ],
-  },
-];
+  plugins: [
+    resolve(), // Resolve modules from node_modules
+    commonjs(), // Convert CommonJS to ES modules
+    production && terser(), // Minify for production
+  ],
+};
