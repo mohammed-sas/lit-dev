@@ -41,4 +41,6 @@ export default class FcIllustration extends LitElement {
   }
 }
 
-window.customElements.define("fc-illustration", FcIllustration);
+if (!window.customElements.get("fc-illustration")) {
+  window.customElements.define("fc-illustration", FcIllustration);
+}

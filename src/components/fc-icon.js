@@ -1,6 +1,6 @@
 import { html, LitElement } from "lit";
 import { unsafeSVG } from "lit-html/directives/unsafe-svg.js";
-import { getSvgContent, iconContent } from "../request";
+import { getSvgContent } from "../request";
 export default class FcIcon extends LitElement {
   static get properties() {
     return {
@@ -31,13 +31,7 @@ export default class FcIcon extends LitElement {
     let baseUrl = window[this.sym]?.baseUrl ? window[this.sym].baseURL : cdnUrl;
     const url = `${baseUrl}${this.group}/${this.name}.svg`;
     this._url = url;
-    if (iconContent.has(url)) {
-      this._svgContent = iconContent.get(url);
-    } else {
-      await getSvgContent(url).then(
-        () => (this._svgContent = iconContent.get(url))
-      );
-    }
+    this._svgContent = await getSvgContent(url);
   }
   render() {
     let styledSvg = `<svg class="${
@@ -52,4 +46,6 @@ export default class FcIcon extends LitElement {
   }
 }
 
-window.customElements.define("fc-icon", FcIcon);
+if (!window.customElements.get("fc-image")) {
+  window.customElements.define("fc-image", FcImage);
+}

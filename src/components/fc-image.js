@@ -36,5 +36,6 @@ export default class FcImage extends LitElement {
     />`;
   }
 }
-
-window.customElements.define("fc-image", FcImage);
+if (!window.customElements.get("fc-image")) {
+  window.customElements.define("fc-image", FcImage);
+}

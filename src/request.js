@@ -1,22 +1,15 @@
-export const iconContent = new Map();
-const requests = new Map();
-
-export const getSvgContent = (url) => {
-  let req = requests.get(url);
-  if (!req) {
-    let [reqURL] = url.split(",");
-    req = fetch(reqURL)
-      .then((rsp) => {
-        if (rsp.ok) {
-          return rsp.text().then((svgContent) => {
-            iconContent.set(url, svgContent || "");
-          });
-        }
-        iconContent.set(url, "");
-      })
-      .catch((e) => console.error(e));
-
-    requests.set(url, req);
+export const getSvgContent = async (url) => {
+  if (url) {
+    try {
+      let response = await fetch(url);
+      if (response.ok) {
+        let svgContent = response.text();
+        return svgContent;
+      }
+      return "";
+    } catch (e) {
+      console.error(e);
+    }
   }
 
   return req;
