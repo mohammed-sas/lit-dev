@@ -46,6 +46,6 @@ export default class FcIcon extends LitElement {
   }
 }
 
-if (!window.customElements.get("fc-image")) {
-  window.customElements.define("fc-image", FcImage);
+if (!window.customElements.get("fc-icon")) {
+  window.customElements.define("fc-icon", FcIcon);
 }
